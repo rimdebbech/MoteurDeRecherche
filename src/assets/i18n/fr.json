@@ -1,0 +1,17 @@
+{
+    "HOME" : {
+        "TITLE" : "Mini moteur de recherche",
+        "BUTTON" :"Retour",
+        "LANG" : "Selectionner votre langue",
+        "SUBMIT" :  "Soumettre",
+        "CLEF" : "Mot clef",
+        "BOOKTITLE": "Titre",
+        "PUBLISH" : "Date de publication",
+        "CATEGORY" : "Catégories",
+        "DETAILS" : "Détails",
+        "AUTHOR" : "Auteur(s)",
+        "DESCRIPTION" : "Description",
+        "PREVIEW" : "accéder au livre",
+        "OK" : "Retour"
+    }
+}

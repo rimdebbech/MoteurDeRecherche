@@ -1,0 +1,18 @@
+{
+    "HOME" : {
+        "TITLE" : "Mini search engine",
+        "BUTTON" :"Return",
+        "LANG" : "Select your language",
+        "SUBMIT" :  "Submit",
+        "CLEF" : "keyword",
+        "BOOKTITLE": "Title",
+        "PUBLISH" : "Published date",
+        "CATEGORY" : "Categories",
+        "DETAILS" : "Details",
+        "AUTHOR" : "Author(s)",
+        "DESCRIPTION" : "Description",
+        "PREVIEW" : "Preview Book",
+        "OK" : "OK"
+
+    }
+}

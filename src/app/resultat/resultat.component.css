@@ -1,0 +1,10 @@
+.example-card {
+    align-items: stretch;
+    width: 80%;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+
+  }
+  

@@ -1,0 +1,19 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let book of dataBooks.items">
+      <mat-card class="example-card" >
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image" [style.backgroundImage]="'url('+ book.volumeInfo.imageLinks.smallThumbnail +')'"></div>
+            <mat-card-title>{{ 'HOME.BOOKTITLE' | translate }}: {{book.volumeInfo.title}}</mat-card-title>
+            <mat-card-subtitle> {{ 'HOME.PUBLISH' | translate }}: {{book.volumeInfo.publishedDate}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+              <p *ngFor="let category of book.volumeInfo.categories" style="font-size: 14px;">
+                  {{ 'HOME.CATEGORY' | translate }} : {{category}}
+              </p>
+            </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="popUpDetails(book)"> {{ 'HOME.DETAILS' | translate }} </button>
+          </mat-card-actions>
+        </mat-card>
+  </mat-grid-tile> 
+</mat-grid-list>

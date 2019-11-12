@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>{{ 'HOME.BOOKTITLE' | translate}} : {{data.title}}</h1>
+
+<div mat-dialog-content color="primary">
+  <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title> {{ 'HOME.AUTHOR' | translate }}: 
+            <p *ngFor="let author of data.authors" style="font-size: 14px;">
+              {{author}}
+            </p>
+            </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="data.image">
+
+        <mat-card-content> {{ 'HOME.DESCRIPTION' | translate }}:
+          <p>{{data.description}}</p>
+        </mat-card-content>
+
+        <a [href]="data.previewLink" target="_blank"> {{ 'HOME.PREVIEW' | translate }} </a>
+      </mat-card>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()"> {{ 'HOME.OK' | translate }}</button>
+</div>

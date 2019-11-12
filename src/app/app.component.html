@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" style="flex: auto;">
+        <mat-toolbar-row>
+          <h1> ADICTIZ </h1>
+          <span style="font-size: 14px; margin-left: 50px;"> {{ 'HOME.TITLE' | translate }} </span>
+          <span class="menu-spacer"></span>
+          <span style="font-size: 14px; margin-left: auto;"> {{ 'HOME.LANG' | translate }} </span>
+          <button mat-button (click)="translate.use('en')">EN</button>
+          <button mat-button (click)="translate.use('fr')">FR</button>
+          <a mat-button color="basic" [routerLink]="'/recherche'" style="margin-left: 80px;" > {{ 'HOME.BUTTON' | translate }} </a>
+        </mat-toolbar-row>
+      </mat-toolbar>
+<router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+<div class="main-div">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> {{ 'HOME.TITLE' | translate }} </mat-card-title >
+    </mat-card-header>
+    <form class="example-form" [formGroup]="formGroup">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="{{'HOME.CLEF' | translate}}" value="" formControlName="clef">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="getBooks()">{{ 'HOME.SUBMIT' | translate }}</button>
+    </form>
+  </mat-card>
+</div>
