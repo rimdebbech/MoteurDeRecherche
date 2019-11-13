@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { ResultatComponent } from './resultat/resultat.component';
+import { PopupComponent } from './popup/popup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatInputModule} from '@angular/material/input';
@@ -15,7 +16,6 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ExampleDialogComponent } from './example-dialog/example-dialog.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -33,7 +33,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     RechercheComponent,
     ResultatComponent,
-    ExampleDialogComponent
+    PopupComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +62,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     })
   ],
   entryComponents: [
-    ExampleDialogComponent
+    PopupComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
