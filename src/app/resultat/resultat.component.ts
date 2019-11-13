@@ -15,15 +15,6 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { ExampleDialogComponent } from '../example-dialog/example-dialog.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
-export interface DialogData {
-  title: string;
-  // image: string;
-  // category: string;
-  // author: string[];
-  // description: string;
-
-}
-
 @Component({
   selector: 'adz-resultat',
   templateUrl: './resultat.component.html',
@@ -36,7 +27,11 @@ export class ResultatComponent implements OnInit {
   clef;
   dataBooks: any ;
 
-  selectedValue: string;
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25];
+
+  pageEvent: PageEvent;
 
   constructor(private http: HttpClient,
               private route: Router,
@@ -45,24 +40,26 @@ export class ResultatComponent implements OnInit {
 
   ngOnInit() {
     this.clef = this.activatedRoute.snapshot.params.clef;
-    this.http.get(this.url + this.clef).subscribe(data => {
+    this.http.get(this.url + this.clef + '&maxResults='+this.pageSize).subscribe(data => {
       this.dataBooks = data;
-      console.log(this.dataBooks.items[0].volumeInfo.authors);
+      this.length = this.dataBooks.totalItems;
     });
   }
 
-  apiFunction() {
+  apiFunction(ps,pi) {
     this.clef = this.activatedRoute.snapshot.params.clef;
-    this.http.get(this.url + this.clef).subscribe(data => {
+    this.http.get(this.url + this.clef + '&maxResults=' + ps +'&startIndex=' + ps*pi).subscribe(data => {
       this.dataBooks = data;
-      console.log(this.dataBooks.items[0].volumeInfo.authors);
     });
   }
-  /*
+  
   getNext(event: PageEvent) {
-    offset = event.pageSize * event.pageIndex
-    // call your api function here with the offset
-  }*/
+    this.apiFunction(event.pageSize , event.pageIndex)
+  }
+
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  }
 
   popUpDetails(book): void {
     const dialogRef = this.dialog.open(ExampleDialogComponent, {

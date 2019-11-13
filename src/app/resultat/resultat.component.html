@@ -1,4 +1,10 @@
-<mat-grid-list cols="3" rowHeight="2:1">
+<mat-paginator [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="pageEvent = getNext($event)">
+</mat-paginator>
+
+<mat-grid-list cols="2" rowHeight="2:1">
   <mat-grid-tile *ngFor="let book of dataBooks.items">
       <mat-card class="example-card" >
           <mat-card-header>
@@ -17,3 +23,4 @@
         </mat-card>
   </mat-grid-tile> 
 </mat-grid-list>
+
